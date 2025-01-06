@@ -3,255 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phantom Role Play | Official | დონაცია</title>
+    <title>Phantom Role Play - გაერთე ჩვენთან !</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #111;
-            color: #fff;
+            background-color: #1a1a1a; /* შავი ფონდი */
+            color: white;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        }
+        .header {
             text-align: center;
-            overflow: hidden;
+            padding: 50px 0;
+            background-color: #333; /* მუქი ფონდი */
+            color: white;
         }
-        .container {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-            width: 100%;
-            max-width: 600px;
-            position: relative;
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-        h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #f39c12;
-        }
-        p {
+        .header p {
             font-size: 18px;
-            margin-bottom: 20px;
-            color: #bdc3c7;
-        }
-        .donation-form input, .donation-form select, .donation-form button {
-            padding: 12px;
-            margin: 8px 0;
-            width: 100%;
-            border-radius: 8px;
-            border: 2px solid #f39c12;
-            font-size: 16px;
-            transition: 0.3s ease-in-out;
-        }
-        .donation-form input:focus, .donation-form select:focus, .donation-form button:focus {
-            outline: none;
-            border-color: #e67e22;
-        }
-        .donation-form button {
-            background-color: #f39c12;
-            color: #fff;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .donation-form button:hover {
-            background-color: #e67e22;
-        }
-        .calculator {
-            background-color: #1abc9c;
-            padding: 20px;
-            margin-top: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-        }
-        .calculator input, .calculator select {
-            padding: 12px;
-            margin-bottom: 15px;
-            font-size: 16px;
-            width: 100%;
-            border-radius: 8px;
-            border: 2px solid #16a085;
-            transition: 0.3s ease-in-out;
-        }
-        .calculator input:focus, .calculator select:focus {
-            outline: none;
-            border-color: #1abc9c;
-        }
-        .calculator button {
-            padding: 12px;
-            width: 100%;
-            background-color: #27ae60;
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .calculator button:hover {
-            background-color: #2ecc71;
-        }
-        .result {
-            margin-top: 15px;
-            font-size: 20px;
-            color: #e74c3c;
-            font-weight: 600;
-        }
-        .footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #bdc3c7;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background-color: #ddd;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-        .progress-bar span {
-            display: block;
-            height: 100%;
-            background-color: #27ae60;
-            border-radius: 5px;
-        }
-        .donation-form input::placeholder, .calculator input::placeholder {
-            font-size: 14px;
-        }
-        .calculator input {
-            width: 70%;
-            padding: 8px;
-            font-size: 14px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border: 2px solid #16a085;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
-        /* Confirmation Message Styling */
-        .confirmation-message {
-            background-color: #2ecc71;
+        /* დონაცია ყვითელი ოთხკუთხედით */
+        .donation {
+            font-size: 24px; /* ზომა გაფართოებულია */
+            color: white; /* თეთრი ტექსტი */
+            background-color: #f39c12; /* ყვითელი ფონი */
+            padding: 15px 30px; /* padding მეტი */
+            border-radius: 10px; /* კიდეების დამრგვალება */
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* მსუბუქი ჩრდილი */
+            cursor: pointer;
+        }
+
+        .donation:hover {
+            animation: bounce 0.5s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .images-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .images-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .character-section {
+            background-color: #222; /* მუქი ფონდი */
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .character-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #00b5e2;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .characters {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .character {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+        }
+        .character img {
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
+        }
+        .footer {
+            text-align: center;
+            background-color: #333;
             color: white;
             padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            display: none;
+            position: relative;
+        }
+        .footer a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        .footer a:hover {
+            color: #00b5e2;
         }
     </style>
 </head>
 <body>
 
-    <div class="container"> 
-        <h1>დონაცია</h1>
-        <p>თქვენი დახმარება მნიშვნელოვანია! გთხოვთ, შეავსოთ ფორმა თქვენი დონაციისთვის!</p>
+    <div class="header">
+        <h1>Phantom Role Play - გაერთე ჩვენთან !</h1>
+        <p>შექმენი შენი ვირტუალური, სახე და განავითარე იგი Phantom Role Play - ზე !</p>
+        
+        <!-- დონაცია ყვითელი ოთხკუთხედით -->
+        <div class="donation" onclick="window.location.href = 'file:///C:/Users/MyMobi/Desktop/%E1%83%A1%E1%83%94%E1%83%A0%E1%83%95%E1%83%94%E1%83%A0%E1%83%98%E1%83%A1%20%E1%83%A1%E1%83%90%E1%83%98%E1%83%A2%E1%83%98/DONATE%20Phantomis/index.html';">დონაცია</div>
+    </div>
 
-        <!-- Donation Form -->
-        <div class="donation-form">
-            <form id="donationForm">
-                <input type="text" id="fullName" placeholder="სახელი და გვარი" required>
-                <input type="number" id="amount" placeholder="რაოდენობა (₾)" required>
-                <select id="currency" required>
-                    <option value="pcoin">P-Coin</option>
-                    <option value="game-money">თამაშის ფული</option>
-                </select>
+    <div class="images-gallery">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZZlHM9oBGImfMlNOQFs-ySChlBQhm2dZqeOsEzEhHEXw57cvRIZWnAF_pEVIxu0HvjYZ0cEbKXOc6-65QUCuCSo4pmAHk4LXz-7-sG5sSVZy0aXxsat2oRIQUS47PLC6BB-h7LD-xNsgr/s1600/render1.png" alt="Samp Image 1">
+        <h1>Phantom Role Play - არის ქართული სერვერი !                     
 
-                <p>აირჩიეთ დრო, როცა იქნებით სერვერზე, რათა ადმინისტრატორმა მოგცეთ დონაციით მიღებული თანხა:</p>
-                <input type="text" id="donationTime" placeholder="ჩაწერეთ დრო" required>
+        სერვერი პირველად გაიხსნა : 31 იანვარს,და აქტიურად ჩაერთო ასპარეზე !</h1>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSkj9K_9WJ9RVdjCPhExkQHwi35t4mRxUgdjsWIShphmj-shB9QL-CGSvLXu3Er-FXf25bDo_ilWLL_CqLhnTs8ZNR2fBFLg5X4rJeSbZar5bApkav_gO_NgDHE2oeOxgDcOWI8UkGSiVa/s1600/render6.png" alt="Samp Image 3">
+    </div>
 
-                <button type="submit">დონაციის გაგზავნა</button>
-            </form>
-        </div>
-
-        <!-- Calculator Section -->
-        <div class="calculator">
-            <h2>კალკულატორი</h2>
-            <input type="number" id="donationInput" placeholder="რაოდენობა (₾)" oninput="calculateDonation()">
-            <select id="calculationType" onchange="calculateDonation()">
-                <option value="game-money">თამაშის ფული</option>
-                <option value="pcoin">P-Coin</option>
-            </select>
-
-            <div class="result">
-                <p id="gameMoneyResult"></p>
-                <p id="pCoinResult"></p>
+    <div class="character-section">
+        <h2>აირჩიე GTA : Mobile/Pc !</h2>
+        <div class="characters">
+            <div class="character">
+                <img src="https://freepngimg.com/download/computer/32990-5-gaming-computer-transparent-picture.png" alt="Character 1">
+                <h3>Pc GTA !</h3>
+                <p>გადმოიწერე GTA, ჩაწერე ჩვენივე IP Address დააჭირე "PLAY"-ს და შემოდი Phantom Role Play - ზე !</p>
             </div>
-            <div class="progress-bar" id="progressBar">
-                <span style="width: 0%"></span>
+            <div class="character">
+                <img src="https://www.chargerlab.com/wp-content/uploads/2023/04/2023041701074393.jpeg" alt="Character 2">
+                <h3>Mobile GTA !</h3>
+                <p>გადმოიწერე GTA, ჩატვირთე ყველანაირი ფაილი შემდეგ დააჭირე "PLAY"-ს და შემოდი Phantom Role Play - ზე !</p>
             </div>
-        </div>
-
-        <!-- Confirmation Message -->
-        <div class="confirmation-message" id="confirmationMessage">
-            გილოცავთ! თქვენი დონაციის მოთხოვნა გაიგზავნა! შემოდით სერვერზე იმ დროს რომელიც თქვენ მიუთითეთ და მიიღებთ კუთვნილ პრიზს!
-        </div>
-
-        <div class="footer">
-            <p>გმადლობთ თქვენი მხარდაჭერისთვის!</p>
+            <div class="character">
+                <img src="http://www.i2symbol.com/pictures/emojis/e/6/f/5/e6f594d8dcb1da9420222f5ca5ab4a69.png" alt="Character 3">
+                <h3>❗დახმარება❗</h3>
+                <p>თუ გაგიჭირდება ჩატვირთვა, ან თუ ჩატვირთე და ვერ ირთვება, ან თუ არის რაიმე დისკომფორტი, გამონაკლისი მოგვწერე Official ფეისბუქ გვერდზე</p>
+            </div>
         </div>
     </div>
 
-    <script>
-        // Function to calculate donation
-        function calculateDonation() {
-            const amount = document.getElementById('donationInput').value;
-            const calculationType = document.getElementById('calculationType').value;
-            const gameMoneyRate = 3000000; // Conversion rate for game money (1 GEL = 3,000,000 game money)
-            const pCoinRate = 3; // Conversion rate for P-Coin (1 GEL = 3 P-Coin)
-
-            let resultMessage = '';
-            let progress = 0;
-
-            if (amount === "" || isNaN(amount) || amount <= 0) {
-                document.getElementById('gameMoneyResult').textContent = '';
-                document.getElementById('pCoinResult').textContent = '';
-                return;
-            }
-
-            if (calculationType === 'game-money') {
-                const gameMoney = amount * gameMoneyRate;
-                resultMessage = `თამაშის ფული: ${gameMoney}`;
-                document.getElementById('gameMoneyResult').textContent = resultMessage;
-                document.getElementById('pCoinResult').textContent = ''; // Clear P-Coin result
-                progress = (amount / 500) * 100; // Max 500 GEL
-            } else if (calculationType === 'pcoin') {
-                const pCoin = amount * pCoinRate;
-                resultMessage = `P-Coin: ${pCoin} კოინი`;
-                document.getElementById('pCoinResult').textContent = resultMessage;
-                document.getElementById('gameMoneyResult').textContent = ''; // Clear Game Money result
-                progress = (amount / 500) * 100; // Max 500 GEL
-            }
-
-            document.getElementById('progressBar').children[0].style.width = `${Math.min(progress, 100)}%`;
-        }
-
-        // Form submission to connect the donation form to the calculator
-        document.getElementById('donationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const amount = document.getElementById('amount').value;
-            const currency = document.getElementById('currency').value;
-
-            // Updating the calculator with the donation form values
-            document.getElementById('donationInput').value = amount;
-            document.getElementById('calculationType').value = currency;
-
-            // Recalculate the donation based on the form input
-            calculateDonation();
-
-            // Show confirmation message after submission
-            document.getElementById('confirmationMessage').style.display = 'block';
-
-            // Hide the confirmation message after 10 seconds
-            setTimeout(function() {
-                document.getElementById('confirmationMessage').style.display = 'none';
-            }, 10000);
-        });
-    </script>
+    <div class="footer">
+        <a href="https://www.facebook.com/groups/1716436795598069" target="_blank">
+            <img src="https://cdn.pixabay.com/photo/2021/06/15/12/51/facebook-6338509_1280.png" alt="Facebook" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://discord.gg/PRSjTXeS" target="_blank">
+            <img src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-1-1.png" alt="Discord" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://www.youtube.com/@ProjectGS9" target="_blank">
+            <img src="c:\Users\MyMobi\Downloads\Youtube-Music-Logo (1).png" alt="YouTube" style="width: 50px; height: 50px;">
+        </a>
+    </div>
+    
 </body>
 </html>
+<div class="donation" onclick="window.location.href = '';">დონაცია</div>
